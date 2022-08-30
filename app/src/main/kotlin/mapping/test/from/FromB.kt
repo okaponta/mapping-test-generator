@@ -1,8 +1,7 @@
 package mapping.test.from
 
-data class To(
+data class FromB(
     val fieldA: String,
     val fieldB: Int,
     val fieldC: Int,
-    val fieldD: String,
 )
