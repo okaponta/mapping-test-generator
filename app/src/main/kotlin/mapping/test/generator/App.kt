@@ -126,15 +126,15 @@ fun writeToFile(generateFileInfo: GenerateFileInfo) {
     pw.println()
     pw.println("class MappingTest : StringSpec({") // TODO: これ用のプロパティ追加
     pw.println("    \"standard case\" {")
-    pw.println("        val fromA = FromA(\"hoge\", 1, 2)")
+    pw.println("        val fromA = FromA(\"hoge\", 1, 2)") // TODO 初期値はMarkdownから取得
     pw.println("        val fromB = FromB(\"fuga\", 3, 4)")
-    pw.println("        val actual = TestMapping.convert(fromA, fromB)")
+    pw.println("        val actual = TestMapping.convert(fromA, fromB)") // TODO 変換メソッドもMarkdownから取得
     for (map in generateFileInfo.mapping) {
         if (map.mappingFromClassName == null) {
             pw.println("        actual." + map.field + " shouldBe " + map.constant)
             continue
         }
-        val varName = map.mappingFromClassName!!.replaceFirstChar { it.lowercaseChar() }
+        val varName = map.mappingFromClassName!!.replaceFirstChar { it.lowercaseChar() } // TODO 型きちんとやる
         pw.println("        actual." + map.field + " shouldBe " + varName + "." + map.mappingFromFieldName)
     }
     pw.println("    }")
