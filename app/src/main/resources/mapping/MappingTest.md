@@ -23,3 +23,9 @@
 | fieldB    | Int    | FromB.fieldC |          |
 | fieldC    | Int    |              | 0        |
 | fieldD    | String |              | null     |
+
+## TODO
+
+- 各クラスのフィールドの初期値も入力できるようにする
+- 型が一致する場合のみのテストの場合はTypeの列不要
+- Constant/MappingFromどっちもに値が含まれる場合は飛ばす
